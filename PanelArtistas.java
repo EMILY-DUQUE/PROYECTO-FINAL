@@ -16,6 +16,13 @@ public class PanelArtistas extends JPanel {
         add(new JScrollPane(listaArtistas), java.awt.BorderLayout.CENTER);
         add(botonNuevoArtista, java.awt.BorderLayout.SOUTH);
 
-
+        botonNuevoArtista.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String nombreArtista = JOptionPane.showInputDialog("Nombre del artista:");
+                if (nombreArtista != null && !nombreArtista.equals("")) {
+                    modeloArtistas.addElement(nombreArtista);
+                }
+            }
+        });
     }
 }
