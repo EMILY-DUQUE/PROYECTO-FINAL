@@ -17,6 +17,13 @@ public class PanelListas extends JPanel {
         add(new JScrollPane(listaListas), java.awt.BorderLayout.CENTER);
         add(botonNuevaLista, java.awt.BorderLayout.SOUTH);
 
-
+        botonNuevaLista.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String nombreLista = JOptionPane.showInputDialog("Nombre de la lista:");
+                if (nombreLista != null && !nombreLista.equals("")) {
+                    modeloListas.addElement(nombreLista);
                 }
             }
+        });
+    }
+}
