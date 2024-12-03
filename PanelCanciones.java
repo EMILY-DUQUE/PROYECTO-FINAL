@@ -16,8 +16,13 @@ public class PanelCanciones extends JPanel {
         add(new JScrollPane(listaCanciones), java.awt.BorderLayout.CENTER);
         add(botonNuevaCancion, java.awt.BorderLayout.SOUTH);
 
-
+        botonNuevaCancion.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String tituloCancion = JOptionPane.showInputDialog("Título de la canción:");
+                if (tituloCancion != null && !tituloCancion.equals("")) {
+                    modeloCanciones.addElement(tituloCancion);
                 }
             }
-
-
+        });
+    }
+}
